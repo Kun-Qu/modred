@@ -100,9 +100,9 @@ def save_array_text(array, file_name, delimiter=None):
 
     # Save data
     if delimiter is None:
-        np.savetxt(file_name, array.view(float))
+        np.savetxt(file_name, array.view(array.dtype))
     else:
-        np.savetxt(file_name, array.view(float), delimiter=delimiter)
+        np.savetxt(file_name, array.view(array.dtype), delimiter=delimiter)
 
 
 def load_array_text(file_name, delimiter=None, is_complex=False):
